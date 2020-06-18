@@ -2,6 +2,8 @@
 # capture full screen screen
 ffmpeg -video_size 1920x1080 -framerate 25 -f gdigrab -i desktop  output.avi
 ffmpeg -video_size 1280x720 -framerate 10 -f gdigrab -i desktop  output.avi
+# --> Macos
+ffmpeg -f avfoundation -i "1" -pix_fmt yuv420p -r 25 -t 5 out.mov
 
 # capture with region
 ffmpeg -f gdigrab -framerate ntsc -offset_x 10 -offset_y 20 -video_size 640x480 -show_region 1 -i desktop output.avi
